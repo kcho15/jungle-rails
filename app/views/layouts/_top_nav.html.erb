@@ -31,6 +31,13 @@
             data-bs-toggle="dropdown"
             aria-expanded="false"
           > %>
+          <% if current_user %>
+          <li id="nav-text"> Welcome back, <%= current_user.first_name %>!</li>
+          <li class="nav-item"><%= link_to "Logout", '/logout', class: "nav-link" %></li>
+          <% else %>
+          <li class="nav-item"><%= link_to 'Login', '/login', class: "nav-link" %></li>
+          <li class="nav-item"><%= link_to 'Sign Up', '/signup', class: "nav-link" %></li>
+          <% end %>
           <li class="nav-item"><%= link_to 'About Us', [:about, :index], class: "nav-link" %></li>
             <%# Categories %>
           <%# </a>
