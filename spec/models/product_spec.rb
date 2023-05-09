@@ -16,27 +16,29 @@ RSpec.describe Product, type: :model do
         @product.name = nil
         @product.save
         expect(@product).to_not be_valid
+        expect(@product.errors.full_messages).to include("Name can't be blank")
       end
       
       it 'is not valid without a price' do
         @product.price_cents = nil
         @product.save
         expect(@product).to_not be_valid
-        expect(@product.errors.full_messages).to include("Price cannot be blank")
+        expect(@product.errors.full_messages).to include("Price can't be blank")
       end
 
       it 'is not valid without a quantity' do
         @product.quantity = nil
         @product.save
         expect(@product).to_not be_valid
-        expect(@product.errors.full_messages).to include("Quantity cannot be blank")
+        expect(@product.errors.full_messages).to include("Quantity can't be blank")
       end
 
       it 'is not valid without a category' do
         @product.category = nil
         @product.save
         expect(@product).to_not be_valid
-        expect(@product.errors.full_messages).to include("Category cannot be blank")
+        expect(@product.errors.full_messages).to include("Category must exist")
       end
     end
+    
 end
