@@ -11,3 +11,5 @@ RSpec.describe User, type: :model do
         testUser.password_confirmation = 'password'
       end
     end
+  end
+end
