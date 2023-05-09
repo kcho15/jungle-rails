@@ -35,12 +35,35 @@ RSpec.describe User, type: :model do
       expect(@user).to_not be_valid
       expect(@user.errors.full_messages).to include("Password is too short (minimum is 6 characters)")
     end
-  
+  end
+
   describe '.authenticate_with_credentials' do
     before do
       @user = User.new(email: 'test@test.com', first_name: 'Tester', last_name: 'McTesterson', password: "password", password_confirmation: "password")
       @user.save
     end
+
+    context 'given an email and password on login' do
+      it 'will login successfully' do
+        @current_user = User.authenticate_with_credentials('test@test.com', 'password')
+        expect(@current_user).to eql(@user)
+      end
+
+      it 'will not login successfully' do
+        @current_user = User.authenticate_with_credentials('test@test.com', 'password1')
+        expect(@current_user).to_not eql(@user)
+      end
+
+      it 'will login successfully even if there is whitespace around email' do
+        @current_user = User.authenticate_with_credentials('   test@test.com  ', 'password')
+        expect(@current_user).to eql(@user)
+      end
+
+      it 'will login successfully even if user types in the wrong case' do
+        @current_user = User.authenticate_with_credentials('teSt@teSt.com', 'password')
+        expect(@current_user).to eql(@user)
+      end
+
+    end
   end
-end
 end
