@@ -1,6 +1,16 @@
 # Jungle
 
-A mini e-commerce application built with Rails 6.1 for purposes of teaching Rails by example.
+A mini e-commerce application built with Rails 6.1 for purposes of teaching Rails by example. 
+
+The goal of the project was to learn how to fix bugs in an unfamiliar language and framework, as well as make and test new features. 
+
+## Screenshots
+
+[1]()
+
+[2]()
+
+[3]()
 
 ## Setup
 
@@ -19,7 +29,7 @@ If Rails is complaining about authentication to the database, uncomment the user
 
 ## Stripe Testing
 
-Use Credit Card # 4111 1111 1111 1111 for testing success scenarios.
+Use Credit Card # 4242 4242 4242 4242 for testing success scenarios.
 
 More information in their docs: <https://stripe.com/docs/testing#cards>
 
