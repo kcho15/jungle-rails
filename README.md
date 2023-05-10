@@ -6,11 +6,11 @@ The goal of the project was to learn how to fix bugs in an unfamiliar language a
 
 ## Screenshots
 
-[1]()
+[1](https://github.com/kcho15/jungle-rails/blob/master/app/assets/images/jungle-home.PNG)
 
-[2]()
+[2](https://github.com/kcho15/jungle-rails/blob/master/app/assets/images/jungle-cart.PNG)
 
-[3]()
+[3](https://github.com/kcho15/jungle-rails/blob/master/app/assets/images/jungle-products.PNG)
 
 ## Setup
 
